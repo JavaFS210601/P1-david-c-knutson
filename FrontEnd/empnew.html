@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emp new</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--I just googled "bootstrap cdn" and this ^^^ was in the second link under "CSS"-->
+    <!--Thanks to bootstrap, we can style elements using the class attribute-->
+
+
+<h3 style="text-align:center; background-color: Tomato; font-size:30px;">
+    EXPENSE FORM
+</h3>
+</head>
+
+<body style="background-color: cyan;"></body>
+
+
+
+
+<body>
+ 
+
+
+    <div class="container" id="fullcontainer">
+      
+        <button onclick="previousFunction()" style="background-color:rgb(106, 158, 22);">Review previous tickets</button>
+        <button onclick="newFunction()" style="background-color:rgb(106, 158, 22);">New Reimbursement ticket</button>
+        
+        <button onclick="myFunction()" style="background-color:rgba(22, 120, 158, 0.397);">Exit</button>
+
+    <p id="demo"></p>
+    
+    <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "Hello World";
+      window.location='http://127.0.0.1:5500/DKP1Front/Logins.html'
+    }
+    </script>
+        
+     <!------------------------previous----------------------------->   
+        <div id="previous" style="display: none;">
+          
+          
+            <div class="container" id="fullcontainer">
+
+
+                 
+                    <form>
+                        <label for="name">Employee ID:     </label>
+                        <input type="text" id="empid3" name="empid3" placeholder="ID number">
+                        <text class="form" id="empwarn3" style="display: none;" style="background-color:yellow;"></text>
+
+
+                        
+                        <br> 
+                         
+                    </form>
+                    
+               
+                <button id="getExpenseButton" class="btn btn-success">old tickets</button> 
+                <div id="table-row" class="row">
+                <!--Then we need rows inside the container to organize it-->
+                    <table id="expenseTable" class="table table-hover table-bordered" style="background-color:gray;">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Amount</th>
+                                <th>Submit date</th>
+                                <th>Resolve date</th>
+                                <th>Description</th>
+                                <th>Submitted by</th>
+                                <th>Reviewed by</th>
+                                <th>Status</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expenseBody">
+                            <!--We're going to leave the table body blank!-->
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <br>
+                 
+            </div>
+
+
+
+
+        </div>
+
+
+         <!--    -------------------------------------   new  ticket -------------------------------------->
+         <div id="newticket" style="display: none;">
+            
+            <div class="container" id="fullcontainer">
+                 
+                
+
+                <div class="container" id="fullcontainer">  <!--Choose Status Filter-->
+                    <form>
+                        <label for="name">Employee ID:     </label>
+                        <input type="text" id="empid" name="empid" placeholder="ID number">
+                        <text class="form" id="empwarn" style="display: none;" style="background-color:yellow;"></text>
+
+
+                        <br> 
+                        <label for="name">Amount:     </label>
+                        <input type="text" id="amount" name="Amount" placeholder="Amount">
+                        <text class="form" id="amtwarn" style="display: none;" style="background-color:yellow;"></text>
+                        <br>
+                        <label for="name">Description:</label>
+                        <input type="text" id="description" name="Description" placeholder=" What for">
+                        <br>
+                    </form>
+                    
+                     
+                    
+                    
+                    
+                    
+                    
+                    <script>
+                        function favTutorial() {
+                        var mylist = document.getElementById("myList");
+                        document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
+                        }
+                    </script>
+
+
+                    <div class="container" id="fullcontainer">  <!--Choose Type Filter-->
+                        <form>  
+                            <b> Select the expense type from the list </b>  
+                           <select id = "myList" onchange = "favTutorial()" >  
+                            <option> ---Choose Expense Type--- </option>  
+                            <option> Food </option>  
+                            <option> Airfare </option>  
+                            <option> Lodging </option>
+                            <option> Transportation </option>  
+                            <option> Other </option>  
+                            </select>  
+                              
+                            
+                                
+                                <input type = "text" id = "favourite" size = "20" style="display: none;" >    
+
+                        </form> 
+
+                    </div> 
+
+                    
+        
+                <div>
+        
+                    <button id="getNewButton" class="btn btn-success">NewTicket</button>
+                     
+                    <form>
+                        <text class="form" id="subbed" style="display: none;" style="background-color:rgb(19, 59, 19);">Submitted</text>
+                        <br>  
+                    </form>
+
+
+
+
+
+
+               <div id="table-row" class="row">
+                 
+                    <table id="expenseTable" class="table table-hover table-bordered" style="background-color:gray;">
+                        <thead style="display: none;">
+                            <tr>
+                                <th>ID</th>
+                                <th>Amount</th>
+                                <th>Submit date</th>
+                                <th>Resolve date</th>
+                                <th>Description</th>
+                                <th>Submitted by</th>
+                                <th>Reviewed by</th>
+                                <th>Status</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newBody"style="display: block;">
+                            
+                        </tbody>
+                    </table>
+                </div>   
+                <br>
+                <br>
+                
+            </div>
+ 
+         </div>
+
+
+         
+
+    <!--    -------------------------------------   Exit Area -------------------------------------->
+     
+
+
+
+    <script src="empnew.js"></script>
+</body>
+</html>
